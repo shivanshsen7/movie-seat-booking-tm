@@ -7,6 +7,7 @@
     --seat-selected-color: #6feaf6;
     --seat-occupied-color: #ffffff;
     --screen-color: #ffffff;
+    font-size: 16px;
 }
 
 * {
@@ -28,18 +29,18 @@ body {
 
 }
 
-h1 {
-    margin-bottom: 15px;
-    font-weight: 700;
-    font-size: 48px;
-}
-
-main{
+main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
     align-items: center;
+}
+
+h1 {
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 2rem;
 }
 
 .movie-container {
@@ -51,6 +52,7 @@ main{
     color: var(--text-color);
     background-color: rgba(94, 93, 112, 0.2);
 }
+
 .movie-container>select {
     font-size: 14px;
     color: var(--text-color);
@@ -133,7 +135,7 @@ main{
     width: 80%;
     margin: 15px auto;
     transform: rotatex(-45deg);
-    box-shadow: 0px 1px 10px rgba(255, 255, 255, 0.7);    
+    box-shadow: 0px 1px 10px rgba(255, 255, 255, 0.7);
 }
 
 .row {
@@ -144,6 +146,7 @@ main{
 p.text {
     margin: 5px 0;
 }
+
 p.text span {
     color: var(--seat-selected-color);
 }
