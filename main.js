@@ -9,7 +9,6 @@ let ticketPrice = parseInt(movieSelect.value); // "let" coz, it may change
 // get data from localStorage amd populate UI
 const populateUI = () => {
   const selectedSeats = JSON.parse(localStorage.getItem("selectedSeats"));
-
   if (selectedSeats !== null && selectedSeats.length > 0) {
     seats.forEach((seat, index) => {
       if (selectedSeats.indexOf(index) > -1) {
@@ -44,19 +43,18 @@ const updateSelectedCount = () => {
   const selectedSeats = document.querySelectorAll(".row .seat.selected");
   const selectedSeatsCount = parseInt(selectedSeats.length);
   const seatIdx = [...selectedSeats].map((seat) => [...seats].indexOf(seat));
-  populateUI();
   count.innerText = selectedSeatsCount;
   total.innerText = selectedSeatsCount * ticketPrice;
-
+  
   //  saves the selcted seats count and its price to local storage
   localStorage.setItem("selectedSeats", JSON.stringify(seatIdx));
+  populateUI();
 }
 
 // on page load
 window.addEventListener("load", (e) => {
   populateUI();
   updateSelectedCount();
-
 })
 
 
